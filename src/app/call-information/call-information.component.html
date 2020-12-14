@@ -1,0 +1,25 @@
+<div class="call-info-main">
+    <div class="call-info-icon">
+        <img src="assets/images/participant.png" class="call-info-user-icon">
+        <p style ="text-align: center; font-size: 15px; font-weight: bold;">{{providerName}}</p>
+    </div>
+    <div class="call-info-icon" style="height: 100%;">
+        <div class="call-info-status">            
+            <div style="display:table-row"><span style="text-align: center; display:block; font-weight: bold;">{{botStatus}}</span></div>
+            <div style="display:table-row"><span style="text-align: center; display:block; font-weight: bold;">{{msgStatus}}</span></div>
+            <div style="display:table-row">
+                <span *ngIf="status !==''" style="text-align: center; display:block; color: #C25608; font-weight: bold;animation: blinker 1s linear infinite;">{{status}}</span>
+                <!-- <span *ngIf="status =='Ringing...'" style="text-align: center; display:block; color: #C25608; font-weight: bold;animation: blinker 1s linear infinite;">Ringing...</span>
+                <span *ngIf="status =='Connected'" style="text-align: center; display:block; color: green; font-weight: bold">Connected</span>
+                <span *ngIf="status =='Ended'" style="text-align: center; display:block; color:red; font-weight: bold">Ended</span> -->
+            </div>
+            <div style="display:table-row"><span style="text-align: center; display:block; font-weight: bold;">{{displayTimer}}</span></div>
+            <div style="display:table-row"><span style="text-align: center; display:block; font-weight: bold;color:#C25608;">{{micStatus}}</span></div>
+        </div>
+        
+    </div>
+    <div class="call-info-icon">
+        <img src="assets/images/participant.png" class="call-info-user-icon">
+        <p style ="text-align: center; font-size: 15px; font-weight: bold;">{{patientName}}</p>
+    </div>   
+</div>

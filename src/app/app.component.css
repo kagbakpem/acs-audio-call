@@ -1,0 +1,42 @@
+.tk-btn-disabled, button:disabled{
+    outline: 0px;
+}
+.audio-call-buttons{
+    height: 20%;
+     display:flex;
+      flex-direction: row;
+       justify-content: center;
+        align-items: center;
+}
+.microphone-on-btn:enabled{
+    cursor: pointer;
+}
+.microphone-off-btn:enabled{
+    cursor: pointer;
+    background-color: #C25608;
+    color:#FFFFFF;
+}
+.endcall-btn:enabled{
+    cursor: pointer;
+    background-color: #C25608;
+    color:#FFFFFF;
+}
+.endcall-btn:disabled,.microphone-off-btn:disabled{
+    background-color:lightgray;
+}
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+
+@media all and (max-width: 426px) {
+    
+  ::ng-deep .tk-head{
+    width: 100%;
+    pointer-events: none;
+  }
+    ::ng-deep .tk-pnav{
+        display: none;
+    }
+}

@@ -1,0 +1,42 @@
+@keyframes blinker {
+    50% {
+      opacity: 0;
+    }
+  }
+.call-info-main{
+  height: 250px;
+   border-style: solid;
+    border-color: darkgray;
+    box-sizing:border-box;
+     display:inline-block;
+      padding: 50px;
+}
+.call-info-icon{
+  float: left;
+   width: auto;
+}
+.call-info-status{
+  display:table;
+   width: 150px;
+   margin-top: 25px;
+}
+.call-info-user-icon{
+  font-size: 120px;
+}
+@media all and (max-width:426px){
+  .call-info-main{
+    height: auto;
+    /* padding: 0; */
+  }
+  .call-info-user-icon{
+    font-size: 80px;
+  }
+  .call-info-icon{
+    text-align: center;
+    float: none;
+     width: auto;
+  }
+  .call-info-status{
+    height: 80px;
+  }
+}

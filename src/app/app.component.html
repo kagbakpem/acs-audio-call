@@ -1,0 +1,38 @@
+<div style="padding-top: 10px;">
+  <div
+      style="height: 50%; display:flex; flex-direction: row; justify-content: center; align-items: center; padding-bottom: 10px;">
+      <app-call-information [displayTimer]="display" [status]="status" [micStatus]="microphoneStatus" [botStatus]="acsBotStatus" [msgStatus]="messageStatus"></app-call-information>
+  </div>
+  <div class="audio-call-buttons">
+      <div *ngIf="!this.groupId" style="padding-left: 10px;">
+          <button id="primary-btn-example" type="button" class="uimf-button uimf-button--primary" (click)="startPHQ()"
+              [disabled]="isRecordStarted||!isCallStarted">Start PHQ/GAD</button>
+      </div>
+      <div *ngIf="!this.groupId" style="padding-left: 20px;padding-right: 100px;">
+          <button id="primary-btn-example" type="button" class="uimf-button uimf-button--primary" (click)="endPHQ()"
+              [disabled]="!isRecordStarted||!isCallStarted">End PHQ/GAD</button>
+      </div>
+      <div>
+          <button *ngIf="isMuted" class="uimf-icon-microphone_off microphone-off-btn"
+              style="border-radius: 50%;width: 40px;height: 40px;"
+              (click)="muteClicked()" [disabled]="!isCallStarted"></button>
+          <button *ngIf="!isMuted" class="uimf-icon-microphone microphone-on-btn"
+              style="border-radius: 50%;width: 40px;height: 40px;background-color: lightgray;"
+              (click)="muteClicked()" [disabled]="!isCallStarted"></button>
+      </div>
+      <div style="padding-left: 20px;">
+          <button class="uimf-icon-phone_end_call endcall-btn" id="endAudioCallBtn"
+              style="border-radius: 50%;width: 40px;height: 40px;"
+              (click)="endCallClicked()" [disabled]="!isCallStarted"></button>
+         </div>
+  </div>
+  <div *ngIf="!this.groupId && recorderTimer!==''" style="padding: 20px 0;">
+      <span style="text-align: center; display:block; font-weight: bold;">{{recordStatus}} {{recorderTimer}}</span>
+  </div>
+  <div *ngIf="!this.groupId" id="phqResponse">
+      <span *ngIf="this.recordResult" style="text-align: center; display:block; font-weight: bold;">PHQ Assessment : {{phqAssessment}} ({{phqValue}})</span>
+  </div>
+  <div *ngIf="!this.groupId" id="gadResponse">
+      <span *ngIf="this.recordResult" style="text-align: center; display:block; font-weight: bold;">GAD Assessment : {{gadAssessment}} ({{gadValue}})</span>
+  </div>
+</div>
